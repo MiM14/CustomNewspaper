@@ -1,12 +1,12 @@
-package com.example.rss_aggregator_2022.features.rssmanagement
+package com.example.rss_aggregator_2022.features.rssmanagement.presentation
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.rss_aggregator_2022.app.domain.ErrorApp
-import com.example.rss_aggregator_2022.features.domain.DeleteSourceRssUseCase
-import com.example.rss_aggregator_2022.features.domain.GetSourceRssUseCase
-import com.example.rss_aggregator_2022.features.domain.Rss
+import com.example.rss_aggregator_2022.features.rssmanagement.domain.DeleteSourceRssUseCase
+import com.example.rss_aggregator_2022.features.rssmanagement.domain.GetSourceRssUseCase
+import com.example.rss_aggregator_2022.features.rssmanagement.domain.Rss
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

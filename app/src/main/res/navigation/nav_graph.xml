@@ -16,14 +16,14 @@
         app:destination="@+id/profile" />
     <fragment
         android:id="@+id/feed"
-        android:name="com.example.rss_aggregator_2022.features.rssfeed.RssFeedFragment"
+        android:name="com.example.rss_aggregator_2022.features.rssfeed.presentation.RssFeedFragment"
         android:label="@string/feed_name"
         tools:layout="@layout/fragment_rss_feed">
 
     </fragment>
     <fragment
         android:id="@+id/management"
-        android:name="com.example.rss_aggregator_2022.features.rssmanagement.RssManagementFragment"
+        android:name="com.example.rss_aggregator_2022.features.rssmanagement.presentation.RssManagementFragment"
         android:label="@string/manager_name"
         tools:layout="@layout/fragment_rss_management">
 
@@ -43,7 +43,7 @@
 
     <dialog
         android:id="@+id/user_form"
-        android:name="com.example.rss_aggregator_2022.features.rssmanagement.UserFormFragment">
+        android:name="com.example.rss_aggregator_2022.features.rssmanagement.presentation.UserFormFragment">
         <action
             android:id="@+id/action_user_form_to_management"
             app:destination="@+id/management" >

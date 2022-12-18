@@ -1,4 +1,4 @@
-package com.example.rss_aggregator_2022.features.rssmanagement
+package com.example.rss_aggregator_2022.features.rssmanagement.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,8 +10,8 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rss_aggregator_2022.R
 import com.example.rss_aggregator_2022.databinding.FragmentRssManagementBinding
-import com.example.rss_aggregator_2022.features.rssmanagement.RssManagementFragmentDirections.Companion.actionManagementToUserForm
-import com.example.rss_aggregator_2022.features.rssmanagement.adapter.RssManagerAdapter
+import com.example.rss_aggregator_2022.features.rssmanagement.presentation.RssManagementFragmentDirections.Companion.actionManagementToUserForm
+import com.example.rss_aggregator_2022.features.rssmanagement.presentation.adapter.RssManagerAdapter
 import com.google.android.material.snackbar.Snackbar
 
 class RssManagementFragment : Fragment() {

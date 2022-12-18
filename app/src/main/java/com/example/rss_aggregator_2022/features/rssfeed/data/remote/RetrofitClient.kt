@@ -1,4 +1,4 @@
-package com.example.rss_aggregator_2022.features.data.remote
+package com.example.rss_aggregator_2022.features.rssfeed.data.remote
 
 
 import com.example.rss_aggregator_2022.app.domain.ErrorApp

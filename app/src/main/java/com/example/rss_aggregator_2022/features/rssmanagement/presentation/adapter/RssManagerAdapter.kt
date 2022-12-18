@@ -1,10 +1,10 @@
-package com.example.rss_aggregator_2022.features.rssmanagement.adapter
+package com.example.rss_aggregator_2022.features.rssmanagement.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rss_aggregator_2022.R
-import com.example.rss_aggregator_2022.features.domain.Rss
+import com.example.rss_aggregator_2022.features.rssmanagement.domain.Rss
 
 class RssManagerAdapter ():RecyclerView.Adapter<RssManagerViewHolder>(){
 

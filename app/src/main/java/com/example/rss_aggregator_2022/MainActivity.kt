@@ -4,8 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import com.example.rss_aggregator_2022.databinding.ActivityMainBinding
-import com.example.rss_aggregator_2022.features.rssfeed.RssFeedFragmentDirections
-import com.example.rss_aggregator_2022.features.rssmanagement.RssManagementFragmentDirections
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 

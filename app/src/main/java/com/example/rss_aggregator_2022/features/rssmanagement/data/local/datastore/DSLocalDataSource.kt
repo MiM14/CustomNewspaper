@@ -1,4 +1,4 @@
-package com.example.rss_aggregator_2022.features.data.local.datastore
+package com.example.rss_aggregator_2022.features.rssmanagement.data.local.datastore
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
@@ -8,8 +8,8 @@ import com.example.rss_aggregator_2022.app.commons.KSerializer
 import com.example.rss_aggregator_2022.app.domain.ErrorApp
 import com.example.rss_aggregator_2022.app.functional.Either
 import com.example.rss_aggregator_2022.app.functional.right
-import com.example.rss_aggregator_2022.features.data.local.LocalDataSource
-import com.example.rss_aggregator_2022.features.domain.Rss
+import com.example.rss_aggregator_2022.features.rssmanagement.data.local.LocalDataSource
+import com.example.rss_aggregator_2022.features.rssmanagement.domain.Rss
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

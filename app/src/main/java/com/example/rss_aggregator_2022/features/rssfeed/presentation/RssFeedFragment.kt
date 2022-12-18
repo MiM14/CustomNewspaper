@@ -1,4 +1,4 @@
-package com.example.rss_aggregator_2022.features.rssfeed
+package com.example.rss_aggregator_2022.features.rssfeed.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater

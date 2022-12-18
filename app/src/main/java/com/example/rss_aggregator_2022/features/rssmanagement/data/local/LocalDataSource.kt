@@ -6,7 +6,7 @@ import com.example.rss_aggregator_2022.features.rssmanagement.domain.Rss
 import kotlinx.coroutines.flow.Flow
 
 interface LocalDataSource {
-    suspend fun saveRss(name:String, urlRss:String)
+    suspend fun saveRss(urlRss: String, name: String)
     fun obtain() : Flow<Either<ErrorApp,List<Rss>>>
     suspend fun delete(urlRss: String)
 

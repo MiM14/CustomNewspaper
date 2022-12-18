@@ -7,11 +7,11 @@ import com.example.rss_aggregator_2022.features.rssmanagement.data.local.LocalDa
 import com.example.rss_aggregator_2022.features.rssmanagement.domain.Rss
 import kotlinx.coroutines.flow.Flow
 
-class XmlLocalDataSource(sharedPref: SharedPreferences): LocalDataSource {
+class XmlLocalDataSource(sharedPref: SharedPreferences) : LocalDataSource {
     private val editor = sharedPref.edit()
 
-    override suspend fun saveRss(name: String, urlRss: String) {
-        editor.putString(urlRss, name)
+    override suspend fun saveRss(urlRss: String, name: String) {
+        editor.putString(name, urlRss)
         editor.apply()
     }
 

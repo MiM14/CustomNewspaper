@@ -35,8 +35,8 @@ class UserFormFragment : BottomSheetDialogFragment() {
             }
             bottomsheetButtonSave.setOnClickListener() {
                 viewModel.saveRss(
-                    inputName.text.toString(),
-                    inputUrl.text.toString()
+                    inputUrl.text.toString(),
+                    inputName.text.toString()
                 )
             }
         }

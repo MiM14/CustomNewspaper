@@ -18,9 +18,9 @@ val Context.dataStore by preferencesDataStore(name = "name_datastore_file")
 class DSLocalDataSource(private val context: Context, private val serializer: KSerializer) :
     LocalDataSource {
 
-    override suspend fun saveRss(name: String, urlRss: String) {
+    override suspend fun saveRss(urlRss: String, name: String) {
         context.dataStore.edit {
-            it[stringPreferencesKey(urlRss)] = serializer.toJson(Rss(name, urlRss))
+            it[stringPreferencesKey(urlRss)] = serializer.toJson(Rss(urlRss, name))
         }
     }
 

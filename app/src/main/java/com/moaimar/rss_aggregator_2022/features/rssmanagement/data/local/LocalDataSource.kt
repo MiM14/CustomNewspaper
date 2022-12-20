@@ -1,8 +1,8 @@
 package com.moaimar.rss_aggregator_2022.features.rssmanagement.data.local
 
-import com.example.rss_aggregator_2022.app.domain.ErrorApp
-import com.example.rss_aggregator_2022.app.functional.Either
-import com.example.rss_aggregator_2022.features.rssmanagement.domain.Rss
+import com.moaimar.rss_aggregator_2022.app.domain.ErrorApp
+import com.moaimar.rss_aggregator_2022.app.functional.Either
+import com.moaimar.rss_aggregator_2022.features.rssmanagement.domain.Rss
 import kotlinx.coroutines.flow.Flow
 
 interface LocalDataSource {

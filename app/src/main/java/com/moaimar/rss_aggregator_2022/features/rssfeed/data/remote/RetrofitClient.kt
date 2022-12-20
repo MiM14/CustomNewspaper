@@ -1,8 +1,8 @@
 package com.moaimar.rss_aggregator_2022.features.rssfeed.data.remote
 
 
-import com.example.rss_aggregator_2022.app.domain.ErrorApp
-import com.example.rss_aggregator_2022.app.functional.Either
+import com.moaimar.rss_aggregator_2022.app.domain.ErrorApp
+import com.moaimar.rss_aggregator_2022.app.functional.Either
 import retrofit2.Retrofit
 import retrofit2.converter.simplexml.SimpleXmlConverterFactory
 

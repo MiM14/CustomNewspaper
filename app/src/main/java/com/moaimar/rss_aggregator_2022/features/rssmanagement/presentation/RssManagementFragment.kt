@@ -10,8 +10,8 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rss_aggregator_2022.R
 import com.example.rss_aggregator_2022.databinding.FragmentRssManagementBinding
-import com.example.rss_aggregator_2022.features.rssmanagement.presentation.RssManagementFragmentDirections.Companion.actionManagementToUserForm
-import com.example.rss_aggregator_2022.features.rssmanagement.presentation.adapter.RssManagerAdapter
+import com.moaimar.rss_aggregator_2022.features.rssmanagement.presentation.RssManagementFragmentDirections.Companion.actionManagementToUserForm
+import com.moaimar.rss_aggregator_2022.features.rssmanagement.presentation.adapter.RssManagerAdapter
 import com.google.android.material.snackbar.Snackbar
 
 class RssManagementFragment : Fragment() {

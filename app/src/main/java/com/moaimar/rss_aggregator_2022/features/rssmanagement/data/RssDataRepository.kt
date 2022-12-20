@@ -1,10 +1,10 @@
 package com.moaimar.rss_aggregator_2022.features.rssmanagement.data
 
-import com.example.rss_aggregator_2022.app.domain.ErrorApp
-import com.example.rss_aggregator_2022.app.functional.Either
-import com.example.rss_aggregator_2022.features.rssmanagement.data.local.LocalDataSource
-import com.example.rss_aggregator_2022.features.rssmanagement.domain.Rss
-import com.example.rss_aggregator_2022.features.rssmanagement.domain.RssRepository
+import com.moaimar.rss_aggregator_2022.app.domain.ErrorApp
+import com.moaimar.rss_aggregator_2022.app.functional.Either
+import com.moaimar.rss_aggregator_2022.features.rssmanagement.data.local.LocalDataSource
+import com.moaimar.rss_aggregator_2022.features.rssmanagement.domain.Rss
+import com.moaimar.rss_aggregator_2022.features.rssmanagement.domain.RssRepository
 import kotlinx.coroutines.flow.Flow
 
 class RssDataRepository(private val localSource: LocalDataSource) : RssRepository {

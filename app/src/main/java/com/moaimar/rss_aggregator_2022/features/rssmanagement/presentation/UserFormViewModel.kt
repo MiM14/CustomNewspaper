@@ -3,7 +3,7 @@ package com.moaimar.rss_aggregator_2022.features.rssmanagement.presentation
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.rss_aggregator_2022.features.rssmanagement.domain.SaveRssUseCase
+import com.moaimar.rss_aggregator_2022.features.rssmanagement.domain.SaveRssUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

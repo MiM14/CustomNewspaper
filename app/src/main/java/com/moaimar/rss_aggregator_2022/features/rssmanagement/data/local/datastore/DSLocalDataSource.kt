@@ -4,12 +4,12 @@ import android.content.Context
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
-import com.example.rss_aggregator_2022.app.commons.KSerializer
-import com.example.rss_aggregator_2022.app.domain.ErrorApp
-import com.example.rss_aggregator_2022.app.functional.Either
-import com.example.rss_aggregator_2022.app.functional.right
-import com.example.rss_aggregator_2022.features.rssmanagement.data.local.LocalDataSource
-import com.example.rss_aggregator_2022.features.rssmanagement.domain.Rss
+import com.moaimar.rss_aggregator_2022.app.commons.KSerializer
+import com.moaimar.rss_aggregator_2022.app.domain.ErrorApp
+import com.moaimar.rss_aggregator_2022.app.functional.Either
+import com.moaimar.rss_aggregator_2022.app.functional.right
+import com.moaimar.rss_aggregator_2022.features.rssmanagement.data.local.LocalDataSource
+import com.moaimar.rss_aggregator_2022.features.rssmanagement.domain.Rss
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

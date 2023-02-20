@@ -28,15 +28,7 @@ class RssManagementFragment : Fragment() {
     ): View? {
         binding = FragmentRssManagementBinding.inflate(inflater)
         setupView()
-
         return binding?.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setupObservers()
-        viewModel.obtainRss()
-
     }
 
     private fun setupView() {
@@ -49,6 +41,13 @@ class RssManagementFragment : Fragment() {
                         LinearLayoutManager.VERTICAL,
                         false
                     )
+                managerAdapter.setOnClick { url ->
+                    viewModel.delete(url)
+                    Snackbar.make(
+                        (requireActivity()).findViewById<ViewGroup>(R.id.main_fragment_view),
+                        R.string.success_delete,
+                        Snackbar.LENGTH_LONG).show()
+                }
             }
             managementToolbar.apply {
                 title = getString(R.string.manager_name)
@@ -64,13 +63,19 @@ class RssManagementFragment : Fragment() {
         }
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupObservers()
+        viewModel.obtainRss()
+    }
+
     private fun setupObservers() {
         val managerRssSubscriber = Observer<RssManagementViewModel.ManagerUiState> { uiState ->
             if (uiState.error != null) {
                 uiState.error.let {
                         Snackbar.make(
-                            binding!!.root,
-                            "$uiState.error",
+                            (requireActivity()).findViewById<ViewGroup>(R.id.main_fragment_view),
+                            R.string.unk_error,
                             Snackbar.LENGTH_LONG
                         )
                 }

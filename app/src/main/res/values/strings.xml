@@ -13,4 +13,6 @@
     <string name="error_added_record">Registro no se ha podido añadir correctamente</string>
     <string name="name_label">Name:</string>
     <string name="url_label">Url:</string>
+    <string name="unk_error">Se ha producido un error inesperado</string>
+    <string name="success_delete">Se ha eliminado el registro correctamente</string>
 </resources>

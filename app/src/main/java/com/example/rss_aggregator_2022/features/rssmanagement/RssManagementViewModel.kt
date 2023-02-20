@@ -4,12 +4,16 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.rss_aggregator_2022.app.domain.ErrorApp
+import com.example.rss_aggregator_2022.features.domain.DeleteSourceRssUseCase
 import com.example.rss_aggregator_2022.features.domain.GetSourceRssUseCase
 import com.example.rss_aggregator_2022.features.domain.Rss
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class RssManagementViewModel(private val getSourceRssUseCase: GetSourceRssUseCase) : ViewModel() {
+class RssManagementViewModel(
+    private val getSourceRssUseCase: GetSourceRssUseCase,
+    private val deleteSourceRssUseCase: DeleteSourceRssUseCase
+) : ViewModel() {
     private val _managerUiState: MutableLiveData<ManagerUiState> = MutableLiveData()
     val managerUiState = _managerUiState
 
@@ -30,5 +34,14 @@ class RssManagementViewModel(private val getSourceRssUseCase: GetSourceRssUseCas
         }
     }
 
-    data class ManagerUiState(val managerFeed: List<Rss> = emptyList(), val error: ErrorApp? = null)
+    fun delete(urlRss: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            deleteSourceRssUseCase(urlRss)
+        }
+    }
+
+    data class ManagerUiState(
+        val managerFeed: List<Rss> = emptyList(),
+        val error: ErrorApp? = null
+    )
 }

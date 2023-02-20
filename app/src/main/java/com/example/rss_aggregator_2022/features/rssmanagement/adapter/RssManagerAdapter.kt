@@ -9,7 +9,11 @@ import com.example.rss_aggregator_2022.features.domain.Rss
 class RssManagerAdapter ():RecyclerView.Adapter<RssManagerViewHolder>(){
 
     private val dataItems = mutableListOf<Rss>()
+    private var itemClick: ((String) -> Unit?)? = null
 
+    fun setOnClick(itemClick :(String) -> Unit){
+        this.itemClick = itemClick
+    }
     fun setDataItems(rss: List<Rss>) {
         dataItems.clear()
         dataItems.addAll(rss)
@@ -25,7 +29,7 @@ class RssManagerAdapter ():RecyclerView.Adapter<RssManagerViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: RssManagerViewHolder, position: Int) {
-        holder.bind(dataItems[position])
+        holder.bind(dataItems[position],itemClick)
     }
 
     override fun getItemCount() = dataItems.size

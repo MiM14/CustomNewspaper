@@ -16,14 +16,14 @@
         app:destination="@+id/profile" />
     <fragment
         android:id="@+id/feed"
-        android:name="com.moaimar.rss_aggregator_2022.features.rssfeed.presentation.RssFeedFragment"
+        android:name="com.moaimar.custom_newspaper.features.rssfeed.presentation.RssFeedFragment"
         android:label="@string/feed_name"
         tools:layout="@layout/fragment_rss_feed">
 
     </fragment>
     <fragment
         android:id="@+id/management"
-        android:name="com.moaimar.rss_aggregator_2022.features.rssmanagement.presentation.RssManagementFragment"
+        android:name="com.moaimar.custom_newspaper.features.rssmanagement.presentation.RssManagementFragment"
         android:label="@string/manager_name"
         tools:layout="@layout/fragment_rss_management">
 
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/profile"
-        android:name="com.moaimar.rss_aggregator_2022.features.profile.ProfileFragment"
+        android:name="com.moaimar.custom_newspaper.features.profile.ProfileFragment"
         android:label="@string/profile_name"
         tools:layout="@layout/fragment_profile">
 
@@ -43,7 +43,7 @@
 
     <dialog
         android:id="@+id/user_form"
-        android:name="com.moaimar.rss_aggregator_2022.features.rssmanagement.presentation.UserFormFragment">
+        android:name="com.moaimar.custom_newspaper.features.rssmanagement.presentation.UserFormFragment">
         <action
             android:id="@+id/action_user_form_to_management"
             app:destination="@+id/management" >

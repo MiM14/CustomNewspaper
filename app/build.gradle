@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -30,9 +31,41 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-simplexml:2.9.0'
+
+    //Simple-XML
+    implementation 'org.simpleframework:simple-xml:2.7.1'
+
+    //Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
+    implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
+
+    //Fragments
+    implementation "androidx.fragment:fragment-ktx:1.5.5"
+
+    //Livedata
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    //ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+
+    //Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
+    //DataStore
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.10'
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'

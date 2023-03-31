@@ -1,4 +1,4 @@
-package com.example.rss_aggregator_2022
+package com.moaimar.custom_newspaper
 
 import org.junit.Test
 

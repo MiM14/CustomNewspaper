@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/feed">
+
+    <action
+        android:id="@+id/to_Feed"
+        app:destination="@+id/feed" />
+    <action
+        android:id="@+id/to_management"
+        app:destination="@+id/management" />
+    <action
+        android:id="@+id/to_profile"
+        app:destination="@+id/profile" />
+    <fragment
+        android:id="@+id/feed"
+        android:name="com.moaimar.custom_newspaper.features.rssfeed.presentation.RssFeedFragment"
+        android:label="@string/feed_name"
+        tools:layout="@layout/fragment_rss_feed">
+
+    </fragment>
+    <fragment
+        android:id="@+id/management"
+        android:name="com.moaimar.custom_newspaper.features.rssmanagement.presentation.RssManagementFragment"
+        android:label="@string/manager_name"
+        tools:layout="@layout/fragment_rss_management">
+
+        <action
+            android:id="@+id/action_management_to_user_form"
+            app:destination="@+id/user_form">
+        </action>
+
+    </fragment>
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.moaimar.custom_newspaper.features.profile.ProfileFragment"
+        android:label="@string/profile_name"
+        tools:layout="@layout/fragment_profile">
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/user_form"
+        android:name="com.moaimar.custom_newspaper.features.rssmanagement.presentation.UserFormFragment">
+        <action
+            android:id="@+id/action_user_form_to_management"
+            app:destination="@+id/management" >
+        </action>
+    </dialog>
+
+</navigation>

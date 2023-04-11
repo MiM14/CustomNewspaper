@@ -4,10 +4,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.moaimar.custom_newspaper.features.rssmanagement.domain.SaveRssUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class UserFormViewModel(private val saveRssUseCase: SaveRssUseCase) : ViewModel() {
+@HiltViewModel
+class UserFormViewModel @Inject constructor(private val saveRssUseCase: SaveRssUseCase) : ViewModel() {
 
     private val _formUiState: MutableLiveData<FormUiState> = MutableLiveData()
     val formUiState: MutableLiveData<FormUiState> = _formUiState

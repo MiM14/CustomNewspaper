@@ -7,13 +7,17 @@ import com.moaimar.custom_newspaper.app.domain.ErrorApp
 import com.moaimar.custom_newspaper.features.rssmanagement.domain.DeleteSourceRssUseCase
 import com.moaimar.custom_newspaper.features.rssmanagement.domain.GetSourceRssUseCase
 import com.moaimar.custom_newspaper.features.rssmanagement.domain.Rss
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class RssManagementViewModel(
+@HiltViewModel
+class RssManagementViewModel @Inject constructor(
     private val getSourceRssUseCase: GetSourceRssUseCase,
     private val deleteSourceRssUseCase: DeleteSourceRssUseCase
 ) : ViewModel() {
+
     private val _managerUiState: MutableLiveData<ManagerUiState> = MutableLiveData()
     val managerUiState = _managerUiState
 

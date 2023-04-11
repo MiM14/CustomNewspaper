@@ -8,15 +8,17 @@ import com.moaimar.custom_newspaper.app.commons.KSerializer
 import com.moaimar.custom_newspaper.app.domain.ErrorApp
 import com.moaimar.custom_newspaper.app.functional.Either
 import com.moaimar.custom_newspaper.app.functional.right
-import com.moaimar.custom_newspaper.features.rssmanagement.data.local.LocalDataSource
+import com.moaimar.custom_newspaper.features.rssmanagement.data.local.RssLocalDataRepository
 import com.moaimar.custom_newspaper.features.rssmanagement.domain.Rss
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
 val Context.dataStore by preferencesDataStore(name = "name_datastore_file")
 
-class DSLocalDataSource(private val context: Context, private val serializer: KSerializer) :
-    LocalDataSource {
+class DSRssLocalDataSource @Inject constructor(@ApplicationContext private val context: Context, private val serializer: KSerializer) :
+    RssLocalDataRepository {
 
     override suspend fun saveRss(urlRss: String, name: String) {
         context.dataStore.edit {

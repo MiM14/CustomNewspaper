@@ -4,7 +4,9 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Url
 
-interface ApiServices {
-@GET
-suspend fun getRss(@Url url: String): Response<RssApiModel>
+interface ApiEndPoints {
+    @GET
+    suspend fun getNews(
+        @Url url: String
+    ): Response<RssApiModel>
 }

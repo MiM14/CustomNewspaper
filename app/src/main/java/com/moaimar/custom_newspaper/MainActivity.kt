@@ -7,8 +7,9 @@ import com.example.rss_aggregator_2022.NavGraphDirections
 import com.example.rss_aggregator_2022.R
 import com.example.rss_aggregator_2022.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private var binding: ActivityMainBinding? = null
 

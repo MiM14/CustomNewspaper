@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,13 +14,13 @@ import com.example.rss_aggregator_2022.databinding.FragmentRssManagementBinding
 import com.moaimar.custom_newspaper.features.rssmanagement.presentation.RssManagementFragmentDirections.Companion.actionManagementToUserForm
 import com.moaimar.custom_newspaper.features.rssmanagement.presentation.adapter.RssManagerAdapter
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RssManagementFragment : Fragment() {
     private var binding: FragmentRssManagementBinding? = null
     private val managerAdapter = RssManagerAdapter()
-    private val viewModel by lazy {
-        RssManagementFactory().injectRssManagementViewModel(requireContext())
-    }
+    private val viewModel by viewModels<RssManagementViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,

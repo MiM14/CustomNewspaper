@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:key="dev_category"
+        app:iconSpaceReserved="false"
+        app:title="Desarrrollo">
+
+        <Preference
+            app:key="dev_auth"
+            app:iconSpaceReserved="false"
+            app:summary="Contacta con el desarrolador de la app"
+            app:title="Autor">
+
+        </Preference>
+
+        <Preference
+            app:key="dev_resources"
+            app:iconSpaceReserved="false"
+            app:summary="Recursos de terceros que se han usado en la aplicación"
+            app:title="Recursos Externos" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="app_category"
+        app:iconSpaceReserved="false"
+        app:title="@string/app_name">
+
+        <Preference
+            app:key="app_web"
+            app:iconSpaceReserved="false"
+            app:summary="Web del proyecto"
+            app:title="Web del proyecto">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="" />
+        </Preference>
+
+        <Preference
+            app:key="app_share"
+            app:iconSpaceReserved="false"
+            app:summary="Link a Play Store"
+            app:title="Compartir applicación" />
+
+        <Preference
+            app:key="app_privacy"
+            app:iconSpaceReserved="false"
+            app:summary="Política de privacidad"
+            app:title="Pulse para ver la política de privacidad">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="" />
+
+        </Preference>
+
+        <Preference
+            app:key="app_version"
+            app:iconSpaceReserved="false"
+            app:title="Versión instalada" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/settings"
-        android:name="com.moaimar.custom_newspaper.features.Settings.SettingsFragment"
+        android:name="com.moaimar.custom_newspaper.features.settings.SettingsFragment"
         android:label="@string/settings_name"
         tools:layout="@layout/fragment_settings">
 

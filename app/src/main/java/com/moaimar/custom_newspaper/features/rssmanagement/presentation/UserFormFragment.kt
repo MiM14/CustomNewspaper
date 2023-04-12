@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import com.example.rss_aggregator_2022.R
-import com.example.rss_aggregator_2022.databinding.FragmentUserFormBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.snackbar.Snackbar
+import com.moaimar.custom_newspaper.R
+import com.moaimar.custom_newspaper.databinding.FragmentUserFormBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.rss_aggregator_2022.databinding.FragmentProfileBinding
+import com.moaimar.custom_newspaper.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
     var binding: FragmentProfileBinding? = null

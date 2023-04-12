@@ -34,7 +34,7 @@ object RemoteModule {
     fun retrofitProvider(okHttpClient: OkHttpClient): Retrofit =
         Retrofit.Builder()
             .addConverterFactory(SimpleXmlConverterFactory.create())
-            .baseUrl("")
+            .baseUrl("https://www.google.es/")
             .client(okHttpClient)
             .build()
 

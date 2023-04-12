@@ -3,10 +3,8 @@ package com.moaimar.custom_newspaper
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import com.example.rss_aggregator_2022.NavGraphDirections
-import com.example.rss_aggregator_2022.R
-import com.example.rss_aggregator_2022.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.moaimar.custom_newspaper.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,9 +24,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setUpNavigation(){
+    private fun setUpNavigation() {
         findViewById<BottomNavigationView>(R.id.bottom_navigation).setOnItemSelectedListener {
-            when(it.itemId){
+            when (it.itemId) {
                 R.id.to_rss_feed_item -> navigateToFeed()
                 R.id.to_rss_manager_item -> navigateToManagement()
                 R.id.to_your_profile_item -> navigateToProfile()
@@ -36,13 +34,16 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
-    private fun navigateToFeed(){
+
+    private fun navigateToFeed() {
         findNavController(R.id.main_fragment_view).navigate(NavGraphDirections.toFeed())
     }
-    private fun navigateToManagement(){
+
+    private fun navigateToManagement() {
         findNavController(R.id.main_fragment_view).navigate(NavGraphDirections.toManagement())
     }
-    private fun navigateToProfile(){
+
+    private fun navigateToProfile() {
         findNavController(R.id.main_fragment_view).navigate(NavGraphDirections.toProfile())
     }
 

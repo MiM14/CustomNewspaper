@@ -1,6 +1,7 @@
 package com.moaimar.custom_newspaper.features.rssmanagement.data.local.datastore
 
 import android.content.Context
+import androidx.datastore.dataStoreFile
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
@@ -12,10 +13,12 @@ import com.moaimar.custom_newspaper.features.rssmanagement.data.local.RssLocalDa
 import com.moaimar.custom_newspaper.features.rssmanagement.domain.Rss
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.forEach
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-val Context.dataStore by preferencesDataStore(name = "name_datastore_file")
+val Context.dataStore by preferencesDataStore(name = "saved_rss_file")
 
 class DSRssLocalDataSource @Inject constructor(@ApplicationContext private val context: Context, private val serializer: KSerializer) :
     RssLocalDataRepository {
@@ -38,5 +41,13 @@ class DSRssLocalDataSource @Inject constructor(@ApplicationContext private val c
         context.dataStore.edit {
             it.remove(stringPreferencesKey(urlRss))
         }
+    }
+
+    suspend fun getURLs(): List<String>{
+        return context.dataStore.data.map {preferences ->
+            preferences.asMap().values.map {
+                serializer.fromJson(it as String, Rss::class.java).urlRss
+            }
+        }.first()
     }
 }

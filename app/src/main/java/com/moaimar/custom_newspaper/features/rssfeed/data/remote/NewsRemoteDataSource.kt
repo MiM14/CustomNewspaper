@@ -13,10 +13,8 @@ class NewsRemoteDataSource @Inject constructor(private val apiClient: ApiEndPoin
         return apiCall {
             apiClient.getNews(url)
         }.map { apiModel ->
-            apiModel.items?.map {
+            apiModel.items!!.map {
                 it.toDomain()
-            } ?: run {
-                emptyList()
             }
         }
     }

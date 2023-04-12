@@ -3,26 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/feed">
+    app:startDestination="@id/news_feed">
 
     <action
         android:id="@+id/to_Feed"
-        app:destination="@+id/feed" />
+        app:destination="@+id/news_feed" />
     <action
         android:id="@+id/to_management"
-        app:destination="@+id/management" />
+        app:destination="@+id/management_rss" />
     <action
-        android:id="@+id/to_profile"
-        app:destination="@+id/profile" />
+        android:id="@+id/to_settings"
+        app:destination="@+id/settings" />
+
     <fragment
-        android:id="@+id/feed"
+        android:id="@+id/news_feed"
         android:name="com.moaimar.custom_newspaper.features.rssfeed.presentation.RssFeedFragment"
         android:label="@string/feed_name"
         tools:layout="@layout/fragment_rss_feed">
 
     </fragment>
     <fragment
-        android:id="@+id/management"
+        android:id="@+id/management_rss"
         android:name="com.moaimar.custom_newspaper.features.rssmanagement.presentation.RssManagementFragment"
         android:label="@string/manager_name"
         tools:layout="@layout/fragment_rss_management">
@@ -34,10 +35,10 @@
 
     </fragment>
     <fragment
-        android:id="@+id/profile"
-        android:name="com.moaimar.custom_newspaper.features.profile.ProfileFragment"
-        android:label="@string/profile_name"
-        tools:layout="@layout/fragment_profile">
+        android:id="@+id/settings"
+        android:name="com.moaimar.custom_newspaper.features.Settings.SettingsFragment"
+        android:label="@string/settings_name"
+        tools:layout="@layout/fragment_settings">
 
     </fragment>
 

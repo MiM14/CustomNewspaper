@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.faltenreich.skeletonlayout.Skeleton
+import com.faltenreich.skeletonlayout.applySkeleton
+import com.moaimar.custom_newspaper.R
 import com.moaimar.custom_newspaper.databinding.FragmentRssFeedBinding
 import com.moaimar.custom_newspaper.features.rssfeed.presentation.adapter.NewsAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,8 +19,10 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class RssFeedFragment : Fragment() {
 
-    var binding: FragmentRssFeedBinding? = null
+    private var binding: FragmentRssFeedBinding? = null
     private val viewModel by viewModels<RssFeedViewModel>()
+
+    private var skeleton: Skeleton? = null
 
     @Inject
     lateinit var newsAdapter: NewsAdapter
@@ -42,13 +47,14 @@ class RssFeedFragment : Fragment() {
         binding?.apply {
             newsList.apply {
                 adapter = newsAdapter
-                    layoutManager = LinearLayoutManager(
+                layoutManager = LinearLayoutManager(
                     requireContext(), LinearLayoutManager.VERTICAL, false
                 )
-                //skeleton = applySkeleton(R.layout.item_character_list, 4)
-                //swipeRefreshLayout.setOnRefreshListener {
-                // viewModel.refreshFeed()
-                // }
+                skeleton = applySkeleton(R.layout.item_rss_feed, 4)
+                swipeRefreshLayout.setOnRefreshListener {
+                    viewModel.refreshFeed()
+                }
+                toolbar.mainToolbar.title = getString(R.string.feed_name)
 
             }
         }
@@ -58,12 +64,12 @@ class RssFeedFragment : Fragment() {
         val characterListObserver =
             Observer<RssFeedViewModel.UiState> { uiState ->
                 if (uiState.isLoading) {
-                    //TODO
+                    skeleton?.showSkeleton()
                 } else {
-                    //TODO
-                    //binding?.swipeRefreshLayout?.isRefreshing = false
+                    skeleton?.showOriginal()
+                    binding?.swipeRefreshLayout?.isRefreshing = false
                     if (uiState.error != null) {
-                        //errorHandler(uiState.error)
+                        //TODO
                     } else {
                         newsAdapter.submitList(uiState.news)
                     }

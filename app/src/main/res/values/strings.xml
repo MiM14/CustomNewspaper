@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">rss_aggregator-2022</string>
-    <string name="feed_name">Rss Feed</string>
-    <string name="manager_name">Rss Management</string>
-    <string name="profile_name">Profile</string>
+    <string name="app_name">Custom Newspaper</string>
+    <string name="feed_name">Noticias</string>
+    <string name="manager_name">Gestión</string>
+    <string name="settings_name">Ajustes</string>
     <string name="add_option">Añadir</string>
     <string name="add_title">Añadir RSS</string>
     <string name="placeholder_name">Introduce el nombre del RSS</string>

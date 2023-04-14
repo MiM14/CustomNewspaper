@@ -5,21 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.rss_aggregator_2022.R
-import com.example.rss_aggregator_2022.databinding.FragmentRssManagementBinding
+import com.google.android.material.snackbar.Snackbar
+import com.moaimar.custom_newspaper.R
+import com.moaimar.custom_newspaper.databinding.FragmentRssManagementBinding
 import com.moaimar.custom_newspaper.features.rssmanagement.presentation.RssManagementFragmentDirections.Companion.actionManagementToUserForm
 import com.moaimar.custom_newspaper.features.rssmanagement.presentation.adapter.RssManagerAdapter
-import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RssManagementFragment : Fragment() {
     private var binding: FragmentRssManagementBinding? = null
     private val managerAdapter = RssManagerAdapter()
-    private val viewModel by lazy {
-        RssManagementFactory().injectRssManagementViewModel(requireContext())
-    }
+    private val viewModel by viewModels<RssManagementViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,7 +47,8 @@ class RssManagementFragment : Fragment() {
                     Snackbar.make(
                         (requireActivity()).findViewById<ViewGroup>(R.id.main_fragment_view),
                         R.string.success_delete,
-                        Snackbar.LENGTH_LONG).show()
+                        Snackbar.LENGTH_LONG
+                    ).show()
                 }
             }
             managementToolbar.apply {
@@ -73,11 +75,11 @@ class RssManagementFragment : Fragment() {
         val managerRssSubscriber = Observer<RssManagementViewModel.ManagerUiState> { uiState ->
             if (uiState.error != null) {
                 uiState.error.let {
-                        Snackbar.make(
-                            (requireActivity()).findViewById<ViewGroup>(R.id.main_fragment_view),
-                            R.string.unk_error,
-                            Snackbar.LENGTH_LONG
-                        )
+                    Snackbar.make(
+                        (requireActivity()).findViewById<ViewGroup>(R.id.main_fragment_view),
+                        R.string.unk_error,
+                        Snackbar.LENGTH_LONG
+                    )
                 }
             } else {
                 managerAdapter.setDataItems(uiState.managerFeed)
